@@ -135,3 +135,22 @@ heart.remove();
 },250);
 
 }
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
+}
