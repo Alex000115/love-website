@@ -1,68 +1,102 @@
-const text = "I Have Something Special To Tell You ❤️";
 const typing = document.getElementById("typing");
-const btn = document.getElementById("startBtn");
+const startBtn = document.getElementById("startBtn");
+
+const text = "I Have Something Special To Tell You ❤️";
 
 let i = 0;
 
 // Typewriter
 function typeWriter() {
+
     if (i < text.length) {
+
         typing.innerHTML += text.charAt(i);
+
         i++;
-        setTimeout(typeWriter, 70);
+
+        setTimeout(typeWriter, 60);
+
     }
+
 }
 
 typeWriter();
 
 
 // Open Proposal
-btn.addEventListener("click", () => {
 
-    document.querySelector(".card").innerHTML = `
-        <h1 style="font-size:45px;">❤️</h1>
+startBtn.addEventListener("click", () => {
 
-        <h2 style="color:white;margin:15px 0;">
-            Will You Be Mine?
-        </h2>
+    document.querySelector(".glass-card").innerHTML = `
 
-        <p style="color:#fff;font-size:18px;margin-bottom:35px;line-height:1.7;">
-            You make my world brighter every single day.
-            <br><br>
-            Would you like to stay in my heart forever?
-        </p>
+        <div class="proposal">
 
-        <div>
-            <button id="yesBtn">
-                YES ❤️
-            </button>
+            <div class="emoji">❤️</div>
 
-            <button id="noBtn" style="margin-left:15px;background:#666;">
-                NO 😅
-            </button>
+            <h2>Will You Be Mine?</h2>
+
+            <p>
+
+                Every smile of yours
+                makes my world brighter.
+
+                <br><br>
+
+                Would you like to stay
+                in my heart forever?
+
+            </p>
+
+            <div class="buttons">
+
+                <button id="yesBtn">
+
+                    YES ❤️
+
+                </button>
+
+                <button id="noBtn">
+
+                    NO 😅
+
+                </button>
+
+            </div>
+
         </div>
+
     `;
 
     yesFunction();
+
     noFunction();
 
 });
 
 
+
+
 // YES
-function yesFunction() {
 
-    const yes = document.getElementById("yesBtn");
+function yesFunction(){
 
-    yes.onclick = () => {
+    document.getElementById("yesBtn").onclick=()=>{
 
-        document.querySelector(".card").innerHTML = `
+        document.querySelector(".glass-card").innerHTML=`
 
         <div class="letter">
 
-            <div class="heart-big">❤️</div>
+            <div class="emoji">
 
-            <h1>For My Favorite Person</h1>
+                ❤️
+
+            </div>
+
+            <h2>
+
+                For My Favorite Person
+
+            </h2>
 
             <p>
 
@@ -88,61 +122,76 @@ function yesFunction() {
 
             </p>
 
-            <h2>I Love You ❤️</h2>
+            <h3>
+
+                I Love You ❤️
+
+            </h3>
 
         </div>
 
         `;
 
-        createHearts();
-
-    };
+    }
 
 }
+
 
 
 // NO Button
-function noFunction() {
 
-    const no = document.getElementById("noBtn");
+function noFunction(){
 
-    no.onmouseover = () => {
+    const no=document.getElementById("noBtn");
 
-        const x = Math.random() * 250 - 125;
-        const y = Math.random() * 180 - 90;
+    no.onmouseover=()=>{
 
-        no.style.transform = `translate(${x}px, ${y}px)`;
+        const x=Math.random()*250-125;
 
-    };
+        const y=Math.random()*180-90;
 
-}
+        no.style.transform=`translate(${x}px,${y}px)`;
 
-
-// Floating Hearts (Only After YES)
-function createHearts() {
-
-    setInterval(() => {
-
-        const heart = document.createElement("div");
-
-        heart.innerHTML = "❤️";
-
-        heart.style.position = "fixed";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.bottom = "-40px";
-        heart.style.fontSize = (20 + Math.random() * 20) + "px";
-        heart.style.pointerEvents = "none";
-        heart.style.zIndex = "999";
-        heart.style.animation = "float 4s linear forwards";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 4000);
-
-    }, 300);
+    }
 
 }
+
+
+
+
+
+// ===============================
+// Floating Hearts Background
+// ===============================
+
+setInterval(()=>{
+
+    const heart=document.createElement("div");
+
+    heart.innerHTML="❤️";
+
+    heart.style.position="fixed";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.bottom="-40px";
+
+    heart.style.fontSize=(18+Math.random()*22)+"px";
+
+    heart.style.opacity=".7";
+
+    heart.style.pointerEvents="none";
+
+    heart.style.zIndex="1";
+
+    heart.style.animation=`float ${5+Math.random()*4}s linear forwards`;
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },9000);
+
+},700);
