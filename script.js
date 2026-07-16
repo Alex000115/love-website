@@ -4,7 +4,7 @@ const btn = document.getElementById("startBtn");
 
 let i = 0;
 
-// Typewriter Effect
+// Typewriter
 function typeWriter() {
     if (i < text.length) {
         typing.innerHTML += text.charAt(i);
@@ -14,6 +14,7 @@ function typeWriter() {
 }
 
 typeWriter();
+
 
 // Open Proposal
 btn.addEventListener("click", () => {
@@ -25,8 +26,9 @@ btn.addEventListener("click", () => {
             Will You Be Mine?
         </h2>
 
-        <p style="color:#ddd;font-size:18px;margin-bottom:35px;line-height:1.7;">
-            You make my world brighter every single day.<br><br>
+        <p style="color:#fff;font-size:18px;margin-bottom:35px;line-height:1.7;">
+            You make my world brighter every single day.
+            <br><br>
             Would you like to stay in my heart forever?
         </p>
 
@@ -35,8 +37,7 @@ btn.addEventListener("click", () => {
                 YES ❤️
             </button>
 
-            <button id="noBtn"
-            style="margin-left:15px;background:#555;">
+            <button id="noBtn" style="margin-left:15px;background:#666;">
                 NO 😅
             </button>
         </div>
@@ -47,67 +48,77 @@ btn.addEventListener("click", () => {
 
 });
 
-// YES Button
+
+// YES
 function yesFunction() {
 
     const yes = document.getElementById("yesBtn");
 
-    yes.addEventListener("click", () => {
+    yes.onclick = () => {
 
         document.querySelector(".card").innerHTML = `
 
-            <div class="letter">
+        <div class="letter">
 
-                <div class="heart-big">❤️</div>
+            <div class="heart-big">❤️</div>
 
-                <h1>For My Favorite Person</h1>
+            <h1>For My Favorite Person</h1>
 
-                <p>
+            <p>
+
                 From the very first moment,
+
                 you became the reason behind my smile.
+
                 <br><br>
 
                 Every day with you feels like
                 the most beautiful chapter
                 of my life.
+
                 <br><br>
 
                 No matter where life takes us,
+
                 I just want one thing...
+
                 <br><br>
 
                 Stay beside me forever ❤️
-                </p>
 
-                <h2>I Love You ❤️</h2>
+            </p>
 
-            </div>
+            <h2>I Love You ❤️</h2>
+
+        </div>
 
         `;
 
         createHearts();
 
-    });
+    };
 
 }
 
-// NO Button Run Away
+
+// NO Button
 function noFunction() {
 
     const no = document.getElementById("noBtn");
 
-    no.addEventListener("mouseover", () => {
+    no.onmouseover = () => {
 
-        const x = Math.random() * 300 - 150;
-        const y = Math.random() * 200 - 100;
+        const x = Math.random() * 250 - 125;
+        const y = Math.random() * 180 - 90;
 
         no.style.transform = `translate(${x}px, ${y}px)`;
 
-    });
+    };
 
 }
 
-// Heart Animation
+
+// Floating Hearts (Only After YES)
 function createHearts() {
 
     setInterval(() => {
@@ -118,37 +129,20 @@ function createHearts() {
 
         heart.style.position = "fixed";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = "100vh";
-        heart.style.fontSize = (20 + Math.random() * 30) + "px";
-        heart.style.animation = "float 5s linear";
+        heart.style.bottom = "-40px";
+        heart.style.fontSize = (20 + Math.random() * 20) + "px";
         heart.style.pointerEvents = "none";
         heart.style.zIndex = "999";
+        heart.style.animation = "float 4s linear forwards";
 
         document.body.appendChild(heart);
 
         setTimeout(() => {
-            heart.remove();
-        }, 5000);
 
-    }, 250);
+            heart.remove();
+
+        }, 4000);
+
+    }, 300);
 
 }
-
-// Background Hearts
-setInterval(() => {
-
-    const heart = document.createElement("div");
-
-    heart.innerHTML = "💖";
-    heart.className = "bgHeart";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (5 + Math.random() * 6) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 12000);
-
-}, 700);
