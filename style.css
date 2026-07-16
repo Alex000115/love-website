@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#ff4d6d44,transparent 30%),
+    radial-gradient(circle at bottom right,#7c3aed55,transparent 35%),
+    radial-gradient(circle at center,#ffffff10,transparent 50%);
+    animation:bgMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.2);
+}
+
+}
+
+/* Glass Card */
+
+.card{
+
+position:relative;
+
+z-index:5;
+
+width:420px;
+
+padding:45px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.18);
+
+border-radius:25px;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.35);
+
+}
+
+/* Title */
+
+h1{
+
+font-size:38px;
+
+color:#fff;
+
+margin-bottom:20px;
+
+min-height:90px;
+
+}
+
+/* Subtitle */
+
+.subtitle{
+
+color:#ddd;
+
+font-size:18px;
+
+margin-bottom:35px;
+
+line-height:1.6;
+
+}
+
+/* Button */
+
+button{
+
+padding:16px 38px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(45deg,#ff4d6d,#ff8fab);
+
+color:white;
+
+transition:.35s;
+
+box-shadow:0 8px 25px rgba(255,77,109,.4);
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 35px rgba(255,77,109,.6);
+
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+.card{
+
+width:90%;
+
+padding:35px 25px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+}
