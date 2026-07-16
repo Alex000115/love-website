@@ -64,7 +64,55 @@ function yesFunction(){
 
 const yes=document.getElementById("yesBtn");
 
-yes.onclick=()=>{
+yes.onclick = () => {
+
+document.querySelector(".card").innerHTML = `
+
+<div class="letter">
+
+<div class="heart-big">❤️</div>
+
+<h1>For My Favorite Person</h1>
+
+<p>
+
+From the very first moment,
+
+you became the reason behind
+
+my smile.
+
+<br><br>
+
+Every day with you feels like
+
+the most beautiful chapter
+
+of my life.
+
+<br><br>
+
+No matter where life takes us,
+
+I just want one thing...
+
+<br><br>
+
+Stay beside me forever.
+
+❤️
+
+</p>
+
+<h2>I Love You</h2>
+
+</div>
+
+`;
+
+createHearts();
+
+}
 
 document.querySelector(".card").innerHTML=`
 
