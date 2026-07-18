@@ -1,7 +1,7 @@
 const typing = document.getElementById("typing");
 const startBtn = document.getElementById("startBtn");
 
-const text = "I Have Something Special To Tell You ❤️";
+const text = "তোমার জন্য আমার একটি বিশেষ কথা আছে... ❤️";
 
 let i = 0;
 
