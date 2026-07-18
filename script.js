@@ -84,15 +84,15 @@ startBtn.addEventListener("click", () => {
 
 function moveNoButton(){
 
-    const no=document.getElementById("noBtn");
+    const no = document.getElementById("noBtn");
 
-    no.onmouseover=()=>{
+    no.onmouseover = () => {
 
-        const x=Math.random()*260-130;
+        const x = Math.random() * 260 - 130;
 
-        const y=Math.random()*180-90;
+        const y = Math.random() * 180 - 90;
 
-        no.style.transform=`translate(${x}px,${y}px)`;
+        no.style.transform = `translate(${x}px,${y}px)`;
 
     }
 
@@ -106,41 +106,52 @@ function moveNoButton(){
 
 function showLetter(){
 
-document.querySelector(".glass-card").innerHTML=`
+document.querySelector(".glass-card").innerHTML = `
 
 <div class="letter">
 
-<div class="emoji">
-
-💖
-
-</div>
+<div class="emoji">💖</div>
 
 <h2>
 
-For My Favorite Person
+প্রিয় কবিতা, ❤️
 
 </h2>
 
 <p>
 
-Replace this message with your own.
+তুমি আমার জীবনের সবচেয়ে সুন্দর অধ্যায়।
 
 <br><br>
 
-Write anything you want here.
+তোমার হাসিতে আমার শান্তি, তোমার ভালোবাসায় আমার পৃথিবী।
 
 <br><br>
 
-Everything inside this paragraph
+প্রতিদিন নতুন করে তোমার প্রেমে পড়ি।
 
-can be edited later.
+<br><br>
+
+জীবনে যত ঝড়ই আসুক,
+আমি সবসময় তোমার হাত ধরে পাশে থাকতে চাই।
+
+<br><br>
+
+ভালোবাসি তোমায়—আজ, আগামীকাল, আর সারাজীবন। ❤️
 
 </p>
 
 <h3>
 
-I Love You ❤️
+ইতি,<br>
+
+তোমার ভালোবাসার মানুষ<br>
+
+<span style="font-size:22px;font-weight:bold;">
+
+Nazrul Islam ❤️
+
+</span>
 
 </h3>
 
@@ -156,34 +167,34 @@ I Love You ❤️
 // Floating Hearts
 // ===============================
 
-setInterval(()=>{
+setInterval(() => {
 
-const heart=document.createElement("div");
+    const heart = document.createElement("div");
 
-heart.innerHTML="❤️";
+    heart.innerHTML = "❤️";
 
-heart.style.position="fixed";
+    heart.style.position = "fixed";
 
-heart.style.left=Math.random()*100+"vw";
+    heart.style.left = Math.random() * 100 + "vw";
 
-heart.style.bottom="-40px";
+    heart.style.bottom = "-40px";
 
-heart.style.fontSize=(18+Math.random()*20)+"px";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
 
-heart.style.opacity=".65";
+    heart.style.opacity = ".65";
 
-heart.style.pointerEvents="none";
+    heart.style.pointerEvents = "none";
 
-heart.style.zIndex="1";
+    heart.style.zIndex = "1";
 
-heart.style.animation=`float ${5+Math.random()*3}s linear forwards`;
+    heart.style.animation = `float ${5 + Math.random() * 3}s linear forwards`;
 
-document.body.appendChild(heart);
+    document.body.appendChild(heart);
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-heart.remove();
+        heart.remove();
 
-},8000);
+    }, 8000);
 
-},700);
+}, 700);
