@@ -5,12 +5,15 @@ const text = "I Have Something Special To Tell You ❤️";
 
 let i = 0;
 
+// ===============================
 // Typewriter
+// ===============================
+
 function typeWriter() {
 
     if (i < text.length) {
 
-        typing.innerHTML += text.charAt(i);
+        typing.textContent += text.charAt(i);
 
         i++;
 
@@ -23,7 +26,9 @@ function typeWriter() {
 typeWriter();
 
 
+// ===============================
 // Open Proposal
+// ===============================
 
 startBtn.addEventListener("click", () => {
 
@@ -37,13 +42,11 @@ startBtn.addEventListener("click", () => {
 
             <p>
 
-                Every smile of yours
-                makes my world brighter.
+                Every smile of yours makes my world brighter.
 
                 <br><br>
 
-                Would you like to stay
-                in my heart forever?
+                Would you like to stay in my heart forever?
 
             </p>
 
@@ -67,86 +70,25 @@ startBtn.addEventListener("click", () => {
 
     `;
 
-    yesFunction();
+    document.getElementById("yesBtn").onclick = showLetter;
 
-    noFunction();
+    moveNoButton();
 
 });
 
 
 
-
-// YES
-
-function yesFunction(){
-
-    document.getElementById("yesBtn").onclick=()=>{
-
-        document.querySelector(".glass-card").innerHTML=`
-
-        <div class="letter">
-
-            <div class="emoji">
-
-                ❤️
-
-            </div>
-
-            <h2>
-
-                For My Favorite Person
-
-            </h2>
-
-            <p>
-
-                From the very first moment,
-
-                you became the reason behind my smile.
-
-                <br><br>
-
-                Every day with you feels like
-                the most beautiful chapter
-                of my life.
-
-                <br><br>
-
-                No matter where life takes us,
-
-                I just want one thing...
-
-                <br><br>
-
-                Stay beside me forever ❤️
-
-            </p>
-
-            <h3>
-
-                I Love You ❤️
-
-            </h3>
-
-        </div>
-
-        `;
-
-    }
-
-}
-
-
-
+// ===============================
 // NO Button
+// ===============================
 
-function noFunction(){
+function moveNoButton(){
 
     const no=document.getElementById("noBtn");
 
     no.onmouseover=()=>{
 
-        const x=Math.random()*250-125;
+        const x=Math.random()*260-130;
 
         const y=Math.random()*180-90;
 
@@ -158,40 +100,90 @@ function noFunction(){
 
 
 
+// ===============================
+// YES
+// ===============================
+
+function showLetter(){
+
+document.querySelector(".glass-card").innerHTML=`
+
+<div class="letter">
+
+<div class="emoji">
+
+💖
+
+</div>
+
+<h2>
+
+For My Favorite Person
+
+</h2>
+
+<p>
+
+Replace this message with your own.
+
+<br><br>
+
+Write anything you want here.
+
+<br><br>
+
+Everything inside this paragraph
+
+can be edited later.
+
+</p>
+
+<h3>
+
+I Love You ❤️
+
+</h3>
+
+</div>
+
+`;
+
+}
+
 
 
 // ===============================
-// Floating Hearts Background
+// Floating Hearts
 // ===============================
 
 setInterval(()=>{
 
-    const heart=document.createElement("div");
+const heart=document.createElement("div");
 
-    heart.innerHTML="❤️";
+heart.innerHTML="❤️";
 
-    heart.style.position="fixed";
+heart.style.position="fixed";
 
-    heart.style.left=Math.random()*100+"vw";
+heart.style.left=Math.random()*100+"vw";
 
-    heart.style.bottom="-40px";
+heart.style.bottom="-40px";
 
-    heart.style.fontSize=(18+Math.random()*22)+"px";
+heart.style.fontSize=(18+Math.random()*20)+"px";
 
-    heart.style.opacity=".7";
+heart.style.opacity=".65";
 
-    heart.style.pointerEvents="none";
+heart.style.pointerEvents="none";
 
-    heart.style.zIndex="1";
+heart.style.zIndex="1";
 
-    heart.style.animation=`float ${5+Math.random()*4}s linear forwards`;
+heart.style.animation=`float ${5+Math.random()*3}s linear forwards`;
 
-    document.body.appendChild(heart);
+document.body.appendChild(heart);
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
-        heart.remove();
+heart.remove();
 
-    },9000);
+},8000);
 
 },700);
